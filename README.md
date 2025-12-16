@@ -1,7 +1,7 @@
 # Portfolio de Bradley Fortin
 
 Bienvenue sur mon portfolio !  
-Voici une sélection de projets scolaires et personnels que j’ai réalisés. Chaque projet inclut un résumé, les technologies utilisées et ses principales fonctionnalités.
+Voici une sélection de projets scolaires que j’ai réalisés. Chaque projet inclut un résumé, les technologies utilisées et ses principales fonctionnalités.
 
 ---
 
