@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title data-i18n="pages.login.title">Se connecter - ChatApp XP</title>
+  <meta
+    http-equiv="Content-Security-Policy"
+    content="
+      default-src 'self';
+      connect-src 'self' http://localhost:* http://127.0.0.1:* ws://localhost:* ws://127.0.0.1:*
+       https://o4510364795469824.ingest.us.sentry.io wss://chatapp-xp.fun
+       wss://www.chatapp-xp.fun wss://www.chatapp-xp.fun/ws https://chatapp-xp.fun https://www.chatapp-xp.fun;
+      script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdnjs.cloudflare.com;
+      style-src 'self' 'unsafe-inline';
+      img-src 'self' data:;
+    "
+  />
+  <link rel="stylesheet" href="../../assets/css/main.css">
+  <link rel="stylesheet" href="../../assets/css/login.css">
+
+  <link rel="stylesheet" href="../../assets/css/mfa-verification-modal.css">
+</head>
+<body>
+<div class="window-titlebar">
+  <div class="titlebar-left">
+    <div class="window-icon"></div>
+    <span class="window-title" data-i18n="pages.login.windowTitle">Se connecter - ChatApp XP</span>
+  </div>
+  <div class="titlebar-controls">
+    <button class="titlebar-button minimize">_</button>
+    <button class="titlebar-button maximize">□</button>
+    <button class="titlebar-button close">×</button>
+  </div>
+</div>
+
+<div class="main-container">
+  <div class="container">
+    <div class="section">
+      <h1 data-i18n="pages.login.heading">Se connecter</h1>
+
+      <form id="loginForm" novalidate>
+        <div>
+          <label for="login-email" data-i18n="pages.login.emailLabel">Email :</label>
+          <input type="email" id="login-email" data-i18n="pages.login.emailPlaceholder" data-i18n-attr="placeholder" placeholder="Entrez votre email" />
+        </div>
+        <div>
+          <label for="login-password" data-i18n="pages.login.passwordLabel">Mot de passe :</label>
+          <input type="password" id="login-password" data-i18n="pages.login.passwordPlaceholder" data-i18n-attr="placeholder" placeholder="Mot de passe" />
+        </div>
+        <button type="submit" class="send-button" data-i18n="pages.login.submit">
+          Se connecter
+        </button>
+      </form>
+
+      <div class="auth-link-container">
+        <a href="register.html" data-i18n="pages.login.noAccountLink">
+          Pas de compte ? Créez-en un
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Status Bar -->
+<div class="status-bar">
+  <div class="status-section">
+    <div class="network-status disconnected">
+      <div class="network-icon"></div>
+      <span data-i18n="status.disconnected">Déconnecté</span>
+    </div>
+  </div>
+  <div class="status-section">
+    <span data-i18n="pages.login.status">Connexion</span>
+  </div>
+</div>
+<div class="notification-container"></div>
+<script type="module" src="../lang/i18nDom.js"></script>
+<script type="module" src="../components/chat/theme/ThemeManager.js"></script>
+<script type="module" src="../components/notifs/NotificationManager.js"></script>
+<script type="module" src="../../assets/js/login.js"></script>
+</body>
+</html>

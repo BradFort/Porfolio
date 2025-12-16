@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/game.css">
+    <script src="https://kit.fontawesome.com/898c566305.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+<div class="bulle-background">
+    <div class="bulle"></div>
+    <div class="bulle"></div>
+    <div class="bulle"></div>
+    <div class="bulle"></div>
+    <div class="bulle"></div>
+    <div class="bulle"></div>
+    <div class="bulle"></div>
+    <div class="bulle"></div>
+    <div class="bulle"></div>
+    <div class="bulle"></div>
+</div>
+
+<i id="bateau" class="fa-solid fa-ship fa-lg"></i>
+<p class="header_text">Battez-vous !</p>
+
+<button id="button-reset">
+    <i class="fa-solid fa-rotate"></i>
+    <span>retour au menu</span>
+</button>
+
+<div class="setup-panel">
+    <select id="ship-select"></select>
+    <button id="toggle-orientation">Orientation : Horizontal</button>
+    <p>Cliquer sur une case pour placer le bateau</p>
+</div>
+
+<div class="conteneur">
+    <div class="grille-etat" id="grille-joeur">
+        <h1>Ma Grille</h1>
+        <div id="grid" class="battleship-grid"></div>
+        <div id="etat-bateaux-joueur" class="etat-bateaux">
+            <h1>Vos bateaux</h1>
+            <ul id="liste-bateaux-joueur" class="etat-bateaux-joueur"></ul>
+        </div>
+    </div>
+    <div class="grille-etat" id="grille-ennemie">
+        <h1>Grille Adverse</h1>
+        <div id="enemy-grid" class="battleship-grid"></div>
+        <div id="etat-bateaux-ennemi" class="etat-bateaux">
+            <h1>Bateaux ennemis</h1>
+            <ul id="liste-bateaux-ennemi" class="etat-bateaux-ennemis"></ul>
+        </div>
+    </div>
+</div>
+
+<script type="module" src="JavaScript/gameLogic/game.js"></script>
+</body>
+</html>

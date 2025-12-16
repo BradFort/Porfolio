@@ -1,0 +1,50 @@
+/* ============================================
+   REGISTER PAGE SPECIFIC STYLES
+   ============================================ */
+
+.main-container {
+  height: calc(100vh - 24px);
+  padding: 40px;
+  background: var(--xp-gray);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  max-width: 400px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: var(--xp-text);
+  font-size: 16px;
+  font-weight: bold;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+}
+
+.send-button {
+  width: 100%;
+  margin-top: 10px;
+  height: 28px;
+  font-size: 11px;
+}
+
+.auth-link-container {
+  text-align: center;
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid var(--xp-border);
+}

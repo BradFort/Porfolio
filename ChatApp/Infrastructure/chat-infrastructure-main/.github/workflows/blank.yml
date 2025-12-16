@@ -1,0 +1,55 @@
+name: Deploy to Production
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      # Checkout the workflow repo (chat-infrastructure)
+      - name: Checkout chat-infrastructure
+        uses: actions/checkout@v3
+      - name: Deploy to server
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: 178.128.228.91
+          username: root
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          envs: GH_TOKEN
+          script_stop: true
+          script: |
+            set -e
+            # Navigate to project folder
+            cd /home/deploy/chat-infrastructure
+            # Stop all Docker services
+            ./scripts/stop.sh
+            # Pull latest for chat-infrastructure itself
+            git remote set-url origin https://$GH_TOKEN@github.com/Multiplateforme2025/chat-infrastructure.git
+            git fetch origin
+            git checkout main
+            git pull origin main
+            # Pull latest for API repo
+            cd api
+            git remote set-url origin https://$GH_TOKEN@github.com/Multiplateforme2025/MultiPlat-chatapp-API.git
+            git fetch origin
+            git checkout master
+            git pull origin master
+            cd ..
+            # Pull latest for WebSocket repo
+            cd websocket
+            git remote set-url origin https://$GH_TOKEN@github.com/Multiplateforme2025/MultiPlat-ChatApp-WS.git
+            git fetch origin
+            git checkout master
+            git pull origin master
+            cd ..
+            # Restart Docker services
+            ./scripts/start.sh
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+      # Notify on failure
+      - name: Notify on failure
+        if: failure()
+        run: |
+          echo "Le déploiement a échoué! Consultez les logs ci-dessus pour plus de détails."

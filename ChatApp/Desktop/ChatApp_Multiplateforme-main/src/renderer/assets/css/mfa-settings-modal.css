@@ -1,0 +1,225 @@
+/* MFA Settings Modal - Clean XP Style */
+
+.mfa-settings-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+}
+
+.mfa-settings-modal {
+  background: var(--xp-gray-light);
+  border: 2px outset var(--xp-gray-dark);
+  box-shadow: 4px 4px 8px rgba(0,0,0,0.3);
+  max-width: 450px;
+  width: 100%;
+  min-width: 320px;
+  min-height: 200px;
+  border-radius: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.mfa-settings-modal .modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 16px;
+  background: linear-gradient(to right, var(--xp-blue), var(--xp-blue-light));
+  border-bottom: 1px solid var(--xp-border-dark);
+}
+
+.mfa-settings-modal .modal-header h2 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+  font-family: Tahoma, 'MS Sans Serif', sans-serif;
+}
+
+.mfa-settings-modal .modal-close {
+  width: 21px;
+  height: 21px;
+  background: var(--xp-gray);
+  border: 1px outset var(--xp-gray-dark);
+  color: var(--xp-text);
+  font-size: 14px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+  border-radius: 0;
+  transition: background 0.2s;
+}
+
+.mfa-settings-modal .modal-close:hover {
+  background: var(--xp-gray-light);
+}
+
+.mfa-settings-modal .modal-close:active {
+  border: 1px inset var(--xp-gray-dark);
+}
+
+.mfa-settings-modal .modal-body {
+  padding: 16px;
+  background: var(--xp-border-light);
+  flex: 1 1 auto;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.mfa-toggle-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px;
+  background: var(--xp-gray-light);
+  border: 1px inset var(--xp-border);
+}
+
+.mfa-toggle-label {
+  font-size: 14px;
+  color: var(--xp-text);
+  font-weight: bold;
+}
+
+.mfa-toggle-description {
+  font-size: 12px;
+  color: var(--xp-text);
+  margin-top: 8px;
+  line-height: 1.4;
+}
+
+.mfa-password-section {
+  display: none;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px;
+  background: var(--xp-gray-light);
+  border: 1px inset var(--xp-border);
+}
+
+.mfa-password-section.show {
+  display: flex;
+}
+
+.mfa-password-section label {
+  font-size: 13px;
+  color: var(--xp-text);
+  font-weight: bold;
+}
+
+.mfa-password-section input {
+  padding: 6px 8px;
+  border: 1px inset var(--xp-border);
+  background: white;
+  color: var(--xp-text);
+  font-size: 13px;
+  font-family: Tahoma, 'MS Sans Serif', sans-serif;
+}
+
+.mfa-password-section input:focus {
+  outline: 1px dotted var(--xp-text);
+  outline-offset: -2px;
+}
+
+.mfa-error-message {
+  display: none;
+  color: red;
+  font-size: 12px;
+  padding: 8px;
+  background: #ffe6e6;
+  border: 1px solid red;
+}
+
+.mfa-error-message.show {
+  display: block;
+}
+
+.mfa-success-message {
+  display: none;
+  color: green;
+  font-size: 12px;
+  padding: 8px;
+  background: #e6ffe6;
+  border: 1px solid green;
+}
+
+.mfa-success-message.show {
+  display: block;
+}
+
+.mfa-settings-modal .modal-footer {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 16px;
+  border-top: 1px solid var(--xp-border);
+  background: none;
+  align-items: flex-end;
+  margin-top: auto;
+}
+
+.mfa-settings-modal .modal-footer button {
+  min-width: 90px;
+  height: 28px;
+  font-size: 13px;
+  border-radius: 0;
+  border: 1px outset var(--xp-gray-dark);
+  background: var(--xp-gray-light);
+  color: var(--xp-text);
+  cursor: pointer;
+  font-family: Tahoma, 'MS Sans Serif', sans-serif;
+  font-weight: bold;
+  transition: background 0.2s;
+  box-shadow: none;
+  margin: 0;
+  padding: 0 16px;
+}
+
+.mfa-settings-modal .modal-footer button:hover {
+  background: var(--xp-gray);
+}
+
+.mfa-settings-modal .modal-footer button:active {
+  border: 1px inset var(--xp-gray-dark);
+}
+
+.mfa-settings-modal .modal-footer .modal-confirm {
+  background: var(--xp-blue);
+  color: white;
+  border-top: 1px solid var(--xp-blue-light);
+  border-left: 1px solid var(--xp-blue-light);
+  border-bottom: 1px solid var(--xp-blue-dark);
+  border-right: 1px solid var(--xp-blue-dark);
+}
+
+.mfa-settings-modal .modal-footer .modal-confirm:hover {
+  background: var(--xp-blue-light);
+}
+
+.mfa-settings-modal .modal-footer .modal-confirm:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@media (max-width: 500px) {
+  .mfa-settings-modal {
+    max-width: 98vw;
+    min-width: 0;
+    padding: 8px;
+  }
+}
+

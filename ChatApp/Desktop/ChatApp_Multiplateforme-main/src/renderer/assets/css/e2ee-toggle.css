@@ -1,0 +1,129 @@
+.e2ee-toggle-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: var(--xp-gray-light, #3E3E42);
+  border-bottom: 1px solid var(--xp-border, #3E3E42);
+  font-size: 14px;
+  transition: background 0.2s;
+  position: relative;
+  z-index: 1;
+  pointer-events: auto;
+}
+
+.e2ee-toggle-container:hover {
+  background: var(--xp-gray, #2D2D30);
+}
+
+.e2ee-toggle-container.disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.e2ee-toggle-icon {
+  font-size: 18px;
+  transition: transform 0.3s;
+  pointer-events: none;
+}
+
+.e2ee-toggle-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.e2ee-toggle-label {
+  color: var(--xp-text, #CCCCCC);
+  font-weight: 500;
+  user-select: none;
+  pointer-events: none;
+}
+
+.e2ee-toggle-info {
+  color: var(--xp-text-light, #969696);
+  font-size: 11px;
+  user-select: none;
+  pointer-events: none;
+}
+
+.e2ee-toggle-info.warning {
+  color: var(--xp-orange, #FF8C00);
+}
+
+.e2ee-toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 24px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.e2ee-toggle-switch.disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.e2ee-toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+
+.e2ee-toggle-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--xp-border, #808080);
+  transition: all 0.3s ease;
+  border-radius: 12px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.e2ee-toggle-slider::before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: var(--xp-gray-light, #F5F5F5);
+  transition: all 0.3s ease;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.e2ee-toggle-switch input:checked + .e2ee-toggle-slider {
+  background-color: var(--xp-green, #00AA00);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2), 0 0 8px rgba(0, 170, 0, 0.3);
+}
+
+.e2ee-toggle-switch input:checked + .e2ee-toggle-slider::before {
+  transform: translateX(20px);
+}
+
+.e2ee-toggle-switch input:disabled + .e2ee-toggle-slider {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.e2ee-status-text {
+  font-size: 12px;
+  color: var(--xp-text-light, #969696);
+  min-width: 70px;
+  text-align: right;
+  font-weight: 500;
+  pointer-events: none;
+  flex-shrink: 0;
+}
+
+.e2ee-status-text.enabled {
+  color: var(--xp-green, #00AA00);
+}
+

@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n="pages.stats.title"></title>
+
+  <meta http-equiv="Content-Security-Policy" content="
+      default-src 'self';
+      connect-src 'self' http://localhost:* http://127.0.0.1:* ws://localhost:* ws://127.0.0.1:*
+        https://chatapp-xp.fun https://www.chatapp-xp.fun;
+      script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com;
+      style-src 'self' 'unsafe-inline';
+      img-src 'self' data:;
+  " />
+
+  <link rel="stylesheet" href="../../assets/css/main.css">
+  <link rel="stylesheet" href="../../assets/css/stats.css">
+</head>
+
+<body>
+<div class="main-container">
+  <div class="container stats-container">
+
+    <h1 data-i18n="pages.stats.title"></h1>
+
+    <!-- Loader -->
+    <div id="stats-loader" class="stats-loader">
+      Chargement des statistiques...
+    </div>
+
+    <!-- Content -->
+    <div id="stats-content" class="stats-content hidden">
+
+      <div class="stats-card">
+        <h2 data-i18n="pages.stats.messageTotal">Total messages</h2>
+        <div class="stats-value" id="stat-total-messages">0</div>
+      </div>
+
+      <div class="stats-card">
+        <h2 data-i18n="pages.stats.channelTotal">Total channels</h2>
+        <div class="stats-value" id="stat-total-channels">0</div>
+      </div>
+
+      <div class="stats-card wide">
+        <h2 data-i18n="pages.stats.top3Channel">Top 3 Channels</h2>
+        <ul id="stat-top-channels"></ul>
+      </div>
+
+      <div class="stats-card wide">
+        <h2 data-i18n="pages.stats.activityPerDay">Activité par jour</h2>
+        <ul id="stat-activity-days"></ul>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<button id="btn-back" class="back-button">
+  ← Retour
+</button>
+<!-- Status Bar -->
+<div class="status-bar">
+  <div class="status-section">
+    <span data-i18n="pages.stats.title"></span>
+  </div>
+</div>
+
+<!-- Scripts -->
+<script type="module" src="../lang/i18nDom.js"></script>
+<script type="module" src="../components/chat/theme/ThemeManager.js"></script>
+
+<!-- IMPORTANT : le bon chemin vers ton module -->
+<script type="module" src="../components/stats/stats.js"></script>
+
+</body>
+</html>

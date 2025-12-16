@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n="pages.admin.title">Panneau Admin - ChatApp XP</title>
+  <meta
+    http-equiv="Content-Security-Policy"
+    content="
+      default-src 'self';
+     connect-src 'self' http://localhost:* http://127.0.0.1:* ws://localhost:* ws://127.0.0.1:*
+       https://o4510364795469824.ingest.us.sentry.io wss://chatapp-xp.fun
+       wss://www.chatapp-xp.fun wss://www.chatapp-xp.fun/ws https://chatapp-xp.fun https://www.chatapp-xp.fun;
+      script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdnjs.cloudflare.com;
+      style-src 'self' 'unsafe-inline';
+      img-src 'self' data:;
+    "
+  />
+  <link rel="stylesheet" href="../../assets/css/main.css">
+  <link rel="stylesheet" href="../../assets/css/adminPanel.css">
+</head>
+<body>
+<div class="main-container">
+  <div class="container">
+    <div class="section">
+      <h1 data-i18n="pages.admin.heading">Panneau d'administration</h1>
+
+      <div class="admin-panel-buttons">
+        <button class="toolbar-button users-button" data-i18n="pages.admin.manageUsers">Gérer les utilisateurs</button>
+        <button class="toolbar-button channels-button" data-i18n="pages.admin.manageChannels">Gérer les salons</button>
+        <button class="toolbar-button messages-button" data-i18n="pages.admin.manageMessages">Gérer les messages</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Status Bar -->
+<div class="status-bar">
+  <div class="status-section">
+    <span data-i18n="pages.admin.status">Panneau d'administration</span>
+  </div>
+</div>
+<div id="notification" class="notification"></div>
+</body>
+<script type="module" src="../lang/i18nDom.js"></script>
+<script type="module" src="../components/chat/theme/ThemeManager.js"></script>
+<script type="module" src="../components/admin/adminPannel.js"></script>
+</html>

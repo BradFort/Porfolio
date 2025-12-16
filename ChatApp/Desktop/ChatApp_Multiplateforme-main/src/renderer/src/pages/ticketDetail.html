@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Détail du Ticket - ChatApp XP</title>
+    <link rel="stylesheet" href="../../assets/css/index.css" />
+    <link rel="stylesheet" href="../../assets/css/main.css" />
+    <link rel="stylesheet" href="../../assets/css/ticket-detail.css" />
+  </head>
+  <body>
+    <!-- Window Title Bar -->
+    <div class="window-titlebar">
+      <div class="titlebar-left">
+        <div class="window-icon"></div>
+        <span class="window-title">Détail du Ticket</span>
+      </div>
+      <div class="titlebar-controls">
+        <button class="titlebar-button minimize">_</button>
+        <button class="titlebar-button maximize">□</button>
+        <button class="titlebar-button close">×</button>
+      </div>
+    </div>
+
+    <div class="ticket-detail-page">
+      <!-- Header avec bouton retour -->
+      <div class="ticket-header">
+        <button id="back-btn" class="btn-back">
+          ← Retour
+        </button>
+        <h1 id="ticket-title">Chargement...</h1>
+      </div>
+
+      <!-- Contenu principal -->
+      <div class="ticket-content">
+        <!-- Section des détails -->
+        <div class="ticket-info-section">
+          <div class="ticket-badges" id="ticket-badges">
+            <!-- Les badges seront insérés ici -->
+          </div>
+
+          <div class="ticket-description-container">
+            <h2>Description</h2>
+            <div class="ticket-description" id="ticket-description">
+              <!-- La description sera insérée ici -->
+            </div>
+          </div>
+
+          <div class="ticket-meta" id="ticket-meta">
+            <!-- Les métadonnées seront insérées ici -->
+          </div>
+
+          <!-- Contrôles admin, affichés uniquement pour les admins -->
+          <div id="admin-controls" style="display:none; margin-top:20px;">
+            <button id="assign-ticket-btn" class="btn-admin">Assigner à un admin</button>
+            <button id="status-ticket-btn" class="btn-admin">Modifier le statut</button>
+            <button id="priority-ticket-btn" class="btn-admin">Modifier la priorité</button>
+            <button id="delete-ticket-btn" class="btn-admin" style="background:#d9534f; color:white;">Supprimer le ticket</button>
+          </div>
+          <div id="admin-modal-container"></div>
+        </div>
+
+        <!-- Section des commentaires -->
+        <div class="comments-section">
+          <h2>Commentaires</h2>
+          <div class="comments-list" id="comments-list">
+            <!-- Les commentaires seront insérés ici -->
+          </div>
+
+          <!-- Formulaire d'ajout de commentaire -->
+          <div class="add-comment-section">
+            <textarea
+              id="comment-input"
+              placeholder="Ajouter un commentaire..."
+              rows="4"
+            ></textarea>
+            <button id="send-comment-btn" class="btn-primary">
+              Envoyer
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="../../assets/js/ticketDetail.js"></script>
+  </body>
+</html>

@@ -1,0 +1,78 @@
+/* ============================================
+   CREATE CHANNEL MODAL SPECIFIC STYLES
+   ============================================ */
+
+.new-channel-modal-main-container {
+  height: calc(100vh - 24px);
+  padding: 20px;
+  background: var(--xp-gray);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.new-channel-modal-container {
+  background: var(--xp-gray-light);
+  border: 2px outset var(--xp-gray-dark);
+  padding: 25px;
+  border-radius: 0;
+  max-width: 450px;
+  width: 100%;
+}
+
+.new-channel-modal-h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: var(--xp-text);
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.new-channel-modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.new-channel-modal-input[type="text"],
+.new-channel-modal-textarea {
+  width: 100%;
+}
+
+.new-channel-modal-textarea {
+  resize: vertical;
+}
+
+.new-channel-modal-radio-container {
+  border: 1px inset var(--xp-gray-dark);
+  padding: 12px;
+  background: var(--xp-border-light);
+}
+
+[data-theme="dark"] .new-channel-modal-radio-container {
+  background: var(--xp-gray-dark);
+}
+
+.new-channel-modal-radio-option {
+  margin-bottom: 8px;
+}
+
+.new-channel-modal-radio-option:last-child {
+  margin-bottom: 0;
+}
+
+.new-channel-modal-radio-option-label {
+  font-size: 11px;
+  cursor: pointer;
+  font-weight: normal;
+}
+
+.new-channel-modal-form-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid var(--xp-border);
+}
+

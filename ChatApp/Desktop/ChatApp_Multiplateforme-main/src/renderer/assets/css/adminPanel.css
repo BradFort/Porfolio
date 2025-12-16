@@ -1,0 +1,380 @@
+/* ============================================
+   ADMIN PANEL PAGE SPECIFIC STYLES
+   ============================================ */
+
+.main-container {
+  height: calc(100vh - 24px);
+  padding: 20px;
+  background: var(--xp-gray);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  background: var(--xp-gray-light);
+  border: 2px outset var(--xp-gray-dark);
+  padding: 25px;
+  border-radius: 0;
+  max-width: 500px;
+  width: 100%;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: var(--xp-text);
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.admin-panel-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.admin-panel-buttons button {
+  height: 32px;
+  font-size: 13px;
+}
+
+/* ============================================
+   ADMIN MODALS
+   ============================================ */
+
+.admin-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.admin-modal-content {
+  background: var(--xp-border-light);
+  padding: 32px;
+  border-radius: 8px;
+  min-width: 350px;
+  max-width: 90vw;
+  max-height: 80vh;
+  overflow-y: auto;
+  border: 2px outset var(--xp-gray-dark);
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+#admin-user-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+#admin-user-content {
+  background: var(--xp-gray-light);
+  padding: 32px;
+  border-radius: 8px;
+  min-width: 350px;
+  max-width: 90vw;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+#admin-channel-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+#admin-channel-content {
+  background: var(--xp-gray-light);
+  padding: 32px;
+  border-radius: 8px;
+  min-width: 350px;
+  max-width: 90vw;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+#admin-message-content {
+  background: var(--xp-gray-light);
+  padding: 32px;
+  border-radius: 8px;
+  min-width: 350px;
+  max-width: 90vw;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+[data-theme="dark"] .admin-modal-content {
+  background: var(--xp-gray);
+}
+
+.admin-modal-close {
+  float: right;
+  margin-bottom: 16px;
+}
+
+.admin-modal-title {
+  text-align: center;
+  margin-bottom: 20px;
+  color: var(--xp-text);
+  font-size: 14px;
+  font-weight: bold;
+  clear: both;
+}
+
+.admin-list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 350px;
+  overflow-y: auto;
+  border: 1px inset var(--xp-gray-dark);
+  background: var(--xp-border-light);
+  padding: 8px;
+}
+
+[data-theme="dark"] .admin-list-container {
+  background: var(--xp-gray-dark);
+}
+
+.admin-user-item,
+.admin-channel-item,
+.admin-message-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--xp-border);
+  gap: 16px;
+}
+
+.admin-user-item:last-child,
+.admin-channel-item:last-child,
+.admin-message-item:last-child {
+  border-bottom: none;
+}
+
+.admin-item-name {
+  font-weight: bold;
+  color: var(--xp-blue-dark);
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+[data-theme="dark"] .admin-item-name {
+  color: var(--xp-blue-light);
+}
+
+.admin-message-content {
+  display: block;
+  text-align: center;
+  color: #2c5aa0;
+  font-weight: bold;
+}
+
+.admin-message-sender {
+  display: block;
+  text-align: center;
+  color: #666;
+  font-size: 12px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .admin-message-content {
+    color: #7fc6ff;
+  }
+
+  .admin-message-sender {
+    color: #9aaec2;
+  }
+}
+
+.admin-delete-btn {
+  background: var(--xp-red);
+  color: white;
+  border: 1px outset #ff6b6b;
+  padding: 4px 12px;
+  font-size: 11px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.admin-delete-btn:hover {
+  background: #ff6b6b;
+  border: 1px outset var(--xp-red);
+}
+
+.admin-delete-btn:active {
+  border: 1px inset #cc0000;
+}
+
+.admin-filter-container {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+  justify-content: center;
+}
+
+.admin-filter-btn {
+  padding: 6px 16px;
+  font-size: 11px;
+  min-width: 80px;
+}
+
+.admin-filter-btn.active {
+  background: var(--xp-blue);
+  color: white;
+  border: 1px inset var(--xp-blue-dark);
+}
+
+.admin-empty-state {
+  text-align: center;
+  padding: 32px 16px;
+  color: var(--xp-text-light);
+  font-style: italic;
+}
+
+.admin-loading {
+  text-align: center;
+  padding: 20px;
+  color: var(--xp-text-light);
+}
+
+.admin-error {
+  color: var(--xp-red);
+  text-align: center;
+  padding: 16px;
+  background: rgba(255, 68, 68, 0.1);
+  border: 1px solid var(--xp-red);
+  border-radius: 4px;
+  margin-bottom: 16px;
+}
+
+[data-theme="dark"] .admin-error {
+  background: rgba(255, 68, 68, 0.2);
+}
+
+.admin-success {
+  color: var(--xp-green);
+  text-align: center;
+  padding: 16px;
+  background: rgba(0, 170, 0, 0.1);
+  border: 1px solid var(--xp-green);
+  border-radius: 4px;
+  margin-bottom: 16px;
+}
+
+[data-theme="dark"] .admin-success {
+  background: rgba(0, 170, 0, 0.2);
+}
+
+.admin-list-container::-webkit-scrollbar {
+  width: 12px;
+}
+
+.admin-list-container::-webkit-scrollbar-track {
+  background: var(--xp-gray);
+  border: 1px inset var(--xp-gray-dark);
+}
+
+.admin-list-container::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, var(--xp-gray-light), var(--xp-gray-dark));
+  border: 1px outset var(--xp-gray-dark);
+}
+
+.admin-list-container::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, var(--xp-border-light), var(--xp-gray));
+}
+
+.admin-channel-title {
+  display: block;
+  text-align: center;
+  color: var(--xp-blue-dark) !important;
+  font-weight: bold;
+}
+[data-theme="dark"] .admin-channel-title {
+  color: var(--xp-blue-light) !important;
+}
+.admin-channel-desc {
+  display: block;
+  text-align: center;
+  color: #333;
+  font-size: 12px;
+}
+@media (prefers-color-scheme: dark) {
+  .admin-channel-desc {
+    color: #9aaec2;
+  }
+}
+
+.admin-user-item .admin-item-name,
+.admin-user-item span,
+.admin-message-content {
+  color: var(--xp-text);
+  font-weight: bold;
+}
+[data-theme="dark"] .admin-user-item .admin-item-name,
+[data-theme="dark"] .admin-user-item span,
+[data-theme="dark"] .admin-message-content {
+  color: var(--xp-blue-light);
+}
+.admin-channel-desc,
+.admin-message-sender {
+  color: var(--xp-text-light);
+  font-size: 12px;
+}
+[data-theme="dark"] .admin-channel-desc,
+[data-theme="dark"] .admin-message-sender {
+  color: #9aaec2;
+}
+
+@media (max-width: 768px) {
+  .admin-modal-content {
+    padding: 20px;
+    min-width: 300px;
+    max-width: 95vw;
+  }
+
+  .admin-list-container {
+    max-height: 250px;
+  }
+
+  .admin-user-item,
+  .admin-channel-item,
+  .admin-message-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .admin-delete-btn {
+    align-self: flex-end;
+  }
+
+  .admin-filter-container {
+    flex-direction: column;
+    gap: 8px;
+  }
+}

@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">TP1-Mobile-Damiers</string>
+    <string name="annuler">Annuler</string>
+    <string name="entrez_le_nom_du_joueur_1">Entrez le nom du joueur 1</string>
+    <string name="joueur_1">Joueur 1</string>
+    <string name="entrez_le_nom_du_joueur_2">Entrez le nom du joueur 2</string>
+    <string name="joueur_2">Joueur 2</string>
+    <string name="jouer">Jouer</string>
+</resources>

@@ -1,0 +1,41 @@
+name: CI Pipeline
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Lint code (Static Analysis)
+        run: npx eslint ./ || true
+
+      - name: Check dependencies for vulnerabilities (Security)
+        run: npm audit --audit-level=high || true
+
+      - name: Build project
+        run: npm run build || echo "No build script, skipping"
+
+      - name: Upload lint and audit logs
+        uses: actions/upload-artifact@v4
+        with:
+          name: security-reports
+          path: |
+            eslint-report.txt
+            npm-audit-report.txt

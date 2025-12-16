@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>BattleShip</title>
+    <link href="/style.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/898c566305.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="bulle-background">
+    <div class="bulle"></div>
+    <div class="bulle"></div>
+    <div class="bulle"></div>
+    <div class="bulle"></div>
+    <div class="bulle"></div>
+    <div class="bulle"></div>
+    <div class="bulle"></div>
+    <div class="bulle"></div>
+    <div class="bulle"></div>
+    <div class="bulle"></div>
+</div>
+<i id="bateau" class="fa-solid fa-ship fa-lg"></i>
+<h1><i id="ancre" class="fa-solid fa-anchor"></i> BattleShip <i id="ancre" class="fa-solid fa-anchor"></i></h1>
+ <div id="container">
+         <p><strong>Bonjour commandant!</strong> Nous avons besoin
+             de vous! Venez vous battre contre un IA tres intelligent et strategique!
+         </p>
+         <form id="form_game">
+             <div class="sections">
+                 <label for="nom_joueur">Votre nom: </label>
+                 <input type="text" id="nom_joueur" name="nom_joueur" required >
+             </div>
+             <div class="sections">
+                 <label for="nom_IA">Nom du joueur IA: </label>
+                 <input type="text" id="nom_IA" name="nom_IA" required>
+             </div>
+             <div class="sections">
+                 <label for="url_api_IA">Url de l'api de l'IA: </label>
+                 <input type="text" id="url_api_IA" name="url_api_IA" required>
+             </div>
+             <div class="sections">
+                 <label for="jeton_IA">Jeton du joueur IA: </label>
+                 <input type="text" id="jeton_IA" name="jeton_IA" required>
+             </div>
+             <div class="canon-row">
+                 <img src="css/clipart789998.png" alt="canon gauche" id="canonGauche" width="50px" height="50px">
+                 <button id="start-button" type="submit">
+                     Lancer l'attaque <i class="fa-solid fa-ship fa-lg"></i>
+                 </button>
+                 <img src="css/clipart789998.png" alt="canon droit" id="canonDroite" width="50px" height="50px">
+             </div>
+         </form>
+ </div>
+<script type="module" src="/JavaScript/index.js"></script>
+</body>
+</html>

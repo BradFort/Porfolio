@@ -1,0 +1,49 @@
+{
+  "name": "multiplat-chatapp-ws",
+  "version": "1.0.0",
+  "description": "Serveur WebSocket Node.js pour ChatApp",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "docker:build": "docker build -t chatapp-websocket .",
+    "docker:run": "docker run -p 3001:3001 --env-file .env chatapp-websocket",
+    "logs:create": "mkdir -p logs",
+    "logs:clean": "rm -rf logs/*.log"
+  },
+  "keywords": [
+    "websocket",
+    "socket.io",
+    "redis",
+    "chat",
+    "realtime",
+    "node.js",
+    "laravel"
+  ],
+  "author": "Zack Livernois, Zachary Bombardier, Antoine Davignon, Cradley Fortin, Samuel Grenier",
+  "license": "ISC",
+  "type": "commonjs",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zack7292/MultiPlat-ChatApp-WS.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Zack7292/MultiPlat-ChatApp-WS/issues"
+  },
+  "homepage": "https://github.com/Zack7292/MultiPlat-ChatApp-WS#readme",
+  "dependencies": {
+    "@sentry/node": "^10.25.0",
+    "@sentry/profiling-node": "^10.25.0",
+    "axios": "^1.12.2",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.2",
+    "express": "^5.1.0",
+    "ioredis": "^5.8.0",
+    "socket.io": "^4.8.1",
+    "winston": "^3.17.0",
+    "ws": "^8.18.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}

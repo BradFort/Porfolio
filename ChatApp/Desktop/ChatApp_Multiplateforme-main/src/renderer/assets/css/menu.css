@@ -1,0 +1,45 @@
+/* Menu Submenu Styles */
+.menu-submenu,
+.menu-submenu-nested {
+  position: absolute;
+  background: var(--xp-gray);
+  border: 1px solid var(--xp-border);
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  min-width: 200px;
+  z-index: 10000;
+  padding: 2px;
+}
+
+.menu-option {
+  padding: 6px 20px;
+  cursor: pointer;
+  font-size: 11px;
+  color: var(--xp-text);
+  position: relative;
+}
+
+.menu-option:hover:not(.disabled) {
+  background: var(--xp-blue);
+  color: white;
+}
+
+.menu-option.disabled {
+  color: var(--xp-text-light);
+  cursor: default;
+}
+
+.menu-option.has-submenu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-separator {
+  height: 1px;
+  background: var(--xp-border);
+  margin: 2px 0;
+}
+
+.menu-submenu-nested {
+  margin-left: -2px;
+}

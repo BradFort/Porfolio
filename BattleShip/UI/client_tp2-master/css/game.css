@@ -1,0 +1,271 @@
+body {
+    font-family: 'Roboto Light', sans-serif;
+    margin: 0;
+    background: #01172F;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.bulle-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1; /* en arrière-plan */
+}
+
+.bulle {
+    position: absolute;
+    bottom: -100px;
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+    animation: monter 10s infinite ease-in;
+}
+
+
+.bulle:nth-child(1) { left: 10%; animation-duration: 12s; width: 15px; height: 15px; }
+.bulle:nth-child(2) { left: 20%; animation-duration: 9s;  }
+.bulle:nth-child(3) { left: 30%; animation-duration: 14s; width: 25px; height: 25px; }
+.bulle:nth-child(4) { left: 40%; animation-duration: 8s; }
+.bulle:nth-child(5) { left: 50%; animation-duration: 13s; width: 10px; height: 10px; }
+.bulle:nth-child(6) { left: 60%; animation-duration: 11s; }
+.bulle:nth-child(7) { left: 70%; animation-duration: 7s; width: 30px; height: 30px; }
+.bulle:nth-child(8) { left: 80%; animation-duration: 10s; }
+.bulle:nth-child(9) { left: 90%; animation-duration: 15s; width: 18px; height: 18px; }
+.bulle:nth-child(10) { left: 95%; animation-duration: 9s; }
+
+
+#bateau{
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 200px;
+    font-size: 200px;
+    color: white;
+}
+
+.header_text{
+    color: white;
+    font-size: 100px;
+}
+
+.conteneur{
+    border-radius: 10px;
+    display: flex;
+    background-color: #2469b3;
+    padding: 40px;
+    justify-content: center;
+    gap: 60px;
+}
+
+@media (max-aspect-ratio: 4/3), (max-width: 768px) {
+    .conteneur {
+        flex-direction: column;
+        align-items: center; /* Center the grids when stacked */
+    }
+
+    .grille-etat {
+        width: 100%; /* Make grids take full width */
+        max-width: 400px; /* Optional: Limit the max width */
+    }
+}
+
+#grid,#enemy-grid{
+    background-color: #2469b3;
+}
+
+h1{
+    text-align: center;
+    color: white;
+}
+
+.battleship-grid {
+    background-color: #01172F;
+    display: grid;
+    grid-template-columns: repeat(11, 32px); /* 10 colonnes + 1 pour étiquette */
+    grid-template-rows: repeat(11, 32px);    /* 10 lignes + 1 pour étiquette */
+    gap: 1px;
+    width: max-content;
+    margin: 20px auto;
+    font-family: sans-serif;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
+}
+
+.cell {
+    background-color: #01172F;
+    width: 32px;
+    height: 32px;
+    border: 1px solid #2469b3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    user-select: none;
+}
+
+.cell:hover {
+    background-color: #44CCFF;
+}
+
+.cell.header {
+    background-color: white;
+    font-weight: bold;
+    cursor: default;
+}
+
+.first_Top_Cell_border{
+    border-top-left-radius: 10px;
+    background-color: #2469b3;
+}
+
+.last_Top_Cell_border{
+    border-top-right-radius: 10px;
+    background-color: #2469b3;
+}
+
+.first_Bottom_Cell_border{
+    border-bottom-left-radius: 10px;
+    background-color: #2469b3;
+}
+
+.last_Bottom_Cell_border{
+    border-bottom-right-radius: 10px;
+    background-color: #2469b3;
+}
+
+.cell.touche {
+    background-color: red;
+    font-size: 20px;       /* Taille de l’icône */
+    color: black;           /* Couleur (modifie selon le type) */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.cell.rate {
+    background-color: #44CCFF; /* Couleur bleue pour un tir raté */
+}
+
+
+.setup-panel {
+    margin-bottom: 1rem;
+    color: white;
+    text-align: center;
+}
+
+.setup-panel select{
+    padding: 10px;
+    background: white;
+    border: 1px solid white;
+    font-family: 'Orbitron', sans-serif;
+    color:#01172F;
+    margin: 0.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.setup-panel button {
+    padding: 10px;
+    background: white;
+    border: 1px solid white;
+    color: #01172F;
+    font-family: 'Orbitron', sans-serif;
+    margin: 0.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cell.ship {
+    background-color: #00ffc880;
+    border: 2px solid #00ffc8;
+}
+
+.etat-bateaux-ennemis {
+    list-style: none;
+    padding: 0;
+}
+
+.bateau-ennemi {
+    margin: 10px 0;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff8f0;
+}
+
+.etat-bateaux-joueur {
+    list-style: none;
+    padding: 0;
+}
+
+.bateau-joueur {
+    margin: 10px 0;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f0f8ff;
+}
+
+.bateau-nom {
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+.bateau-barre {
+    height: 20px;
+    border-radius: 6px;
+    background-color: #e0e0e0;
+    overflow: hidden;
+    position: relative;
+}
+
+.bateau-progress {
+    height: 100%;
+    transition: width 0.3s ease;
+}
+
+.progress-vert {
+    background-color: #4caf50;
+}
+
+.progress-jaune {
+    background-color: #ffc107;
+}
+
+.progress-rouge {
+    background-color: #f44336;
+}
+
+.li_ennemie{
+    color: white;
+    list-style: none;
+}
+
+
+@keyframes monter {
+    0% {
+        bottom: -100px;
+        opacity: 0;
+        transform: translateX(0) scale(1);
+    }
+    50% {
+        opacity: 0.6;
+        transform: translateX(20px) scale(1.2);
+    }
+    100% {
+        bottom: 110%;
+        opacity: 0;
+        transform: translateX(-20px) scale(0.8);
+    }
+}
+
+@keyframes apparait {
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+}
