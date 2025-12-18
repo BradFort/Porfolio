@@ -117,12 +117,14 @@ npm run dev
 ![Flutter](https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white)
 
 **Fonctionnalités :**
-- Déplacement intuitif des pions
-- Capture automatique des pions adverses
+- Déplacement des pions
+- Capture des pions adverses
 - Gestion des tours de jeu
 - Interface tactile optimisée pour mobile
 
 ---
+#### 🧩 Installation et configuration
+1. Importer le projet dans Android Studio et faire démarrer l'application
 
 ### 💬 ChatApp
 
@@ -143,7 +145,16 @@ npm run dev
 - Gestion des utilisateurs connectés
 - Notifications de connexion/déconnexion
 
----
+#### 🧩 Installation et configuration
+1. Importer le dossier Desktop dans un IDE compatible.
+2. Dans le terminal du client, installer les dépendances :
+```bash
+npm install
+```
+3. Dans le terminal du client, faire :
+```bash
+npm start
+```
 
 ## 🚀 Comment utiliser ce portfolio
 
